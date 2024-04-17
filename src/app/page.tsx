@@ -1,4 +1,5 @@
 "use client";
+import { FaCircleExclamation } from "react-icons/fa6";
 
 export default function Home() {
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,34 +29,66 @@ export default function Home() {
           className="flex flex-col gap-4 bg-white rounded-lg p-10 max-[900px]:p-6 shadow-[0_8px_0_rgba(0,0,0,0.2)]"
           onSubmit={(e) => submitHandler(e)}
         >
-          <input
-            className="border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
-            placeholder="First Name"
-            type="text"
-            name="firstName"
-            id="firstName"
-          />
-          <input
-            className="border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
-            placeholder="Last Name"
-            type="text"
-            name="lastName"
-            id="lastName"
-          />
-          <input
-            className="border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
-            placeholder="Email Address"
-            type="text"
-            name="email"
-            id="email"
-          />
-          <input
-            className="border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
-            placeholder="Password"
-            type="text"
-            name="password"
-            id="password"
-          />
+          <div className="relative">
+            <input
+              className="w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
+              placeholder="First Name"
+              type="text"
+              name="firstName"
+              id="firstName"
+            />
+            <div className="absolute right-6 top-[calc(50%-13px)] hidden">
+              <FaCircleExclamation color="var(--primaryRed)" size={26} />
+            </div>
+            <p className="text-primaryRed text-xs text-right pt-1 h-4 hidden">
+              First Name cannot be empty
+            </p>
+          </div>
+          <div className="relative">
+            <input
+              className="w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
+              placeholder="Last Name"
+              type="text"
+              name="lastName"
+              id="lastName"
+            />
+            <div className="absolute right-6 top-[calc(50%-13px)] hidden">
+              <FaCircleExclamation color="var(--primaryRed)" size={26} />
+            </div>
+            <p className="text-primaryRed text-xs text-right pt-1 h-4 hidden">
+              First Name cannot be empty
+            </p>
+          </div>
+          <div className="relative">
+            <input
+              className="w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
+              placeholder="Email Address"
+              type="text"
+              name="email"
+              id="email"
+            />
+            <div className="absolute right-6 top-[calc(50%-13px)] hidden">
+              <FaCircleExclamation color="var(--primaryRed)" size={26} />
+            </div>
+            <p className="text-primaryRed text-xs text-right pt-1 h-4 hidden">
+              First Name cannot be empty
+            </p>
+          </div>
+          <div className="relative">
+            <input
+              className="w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
+              placeholder="Password"
+              type="text"
+              name="password"
+              id="password"
+            />
+            <div className="absolute right-6 top-[calc(50%-13px)] hidden">
+              <FaCircleExclamation color="var(--primaryRed)" size={26} />
+            </div>
+            <p className="text-primaryRed text-xs text-right pt-1 h-4 hidden">
+              First Name cannot be empty
+            </p>
+          </div>
           <button className="text-center uppercase bg-primaryGreen rounded-md py-4 pb-3 font-[500] border-[rgb(37,170,113)]  border-b-4 hover:opacity-75">
             claim your free trial
           </button>
