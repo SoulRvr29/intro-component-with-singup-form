@@ -1,11 +1,33 @@
 "use client";
 import { FaCircleExclamation } from "react-icons/fa6";
-
+import { useState } from "react";
+git;
 export default function Home() {
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert("Form submitted");
+    if (!firstName) {
+      setFirstNameError(true);
+    } else setFirstNameError(false);
+    if (!lastName) {
+      setLastNameError(true);
+    } else setLastNameError(false);
+    if (!email) {
+      setEmailError(true);
+    } else setEmailError(false);
+    if (!password) {
+      setPasswordError(true);
+    } else setPasswordError(false);
   };
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [firstNameError, setFirstNameError] = useState(false);
+  const [lastNameError, setLastNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+
   return (
     <main className="grid grid-cols-2 max-[900px]:grid-cols-1 max-[900px]:max-w-xl items-center max-w-6xl gap-8 p-6">
       <div className="max-[900px]:text-center">
@@ -26,7 +48,7 @@ export default function Home() {
           </div>
         </div>
         <form
-          className="flex flex-col gap-4 bg-white rounded-lg p-10 max-[900px]:p-6 shadow-[0_8px_0_rgba(0,0,0,0.2)]"
+          className="flex flex-col gap-6 bg-white rounded-lg p-10 max-[900px]:p-6 shadow-[0_8px_0_rgba(0,0,0,0.2)]"
           onSubmit={(e) => submitHandler(e)}
         >
           <div className="relative">
@@ -36,13 +58,18 @@ export default function Home() {
               type="text"
               name="firstName"
               id="firstName"
+              onChange={(e) => setFirstName(e.target.value)}
             />
-            <div className="absolute right-6 top-[calc(50%-13px)] hidden">
-              <FaCircleExclamation color="var(--primaryRed)" size={26} />
-            </div>
-            <p className="text-primaryRed text-xs text-right pt-1 h-4 hidden">
-              First Name cannot be empty
-            </p>
+            {firstNameError && (
+              <div className="absolute right-6 top-[calc(50%-13px)]">
+                <FaCircleExclamation color="var(--primaryRed)" size={26} />
+              </div>
+            )}
+            {firstNameError && (
+              <p className="text-primaryRed text-xs absolute right-0 ">
+                First Name cannot be empty
+              </p>
+            )}
           </div>
           <div className="relative">
             <input
@@ -51,28 +78,38 @@ export default function Home() {
               type="text"
               name="lastName"
               id="lastName"
+              onChange={(e) => setLastName(e.target.value)}
             />
-            <div className="absolute right-6 top-[calc(50%-13px)] hidden">
-              <FaCircleExclamation color="var(--primaryRed)" size={26} />
-            </div>
-            <p className="text-primaryRed text-xs text-right pt-1 h-4 hidden">
-              First Name cannot be empty
-            </p>
+            {lastNameError && (
+              <div className="absolute right-6 top-[calc(50%-13px)]">
+                <FaCircleExclamation color="var(--primaryRed)" size={26} />
+              </div>
+            )}
+            {lastNameError && (
+              <p className="text-primaryRed text-xs absolute right-0 ">
+                Last Name cannot be empty
+              </p>
+            )}
           </div>
           <div className="relative">
             <input
               className="w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
-              placeholder="Email Address"
+              placeholder="Email address"
               type="text"
               name="email"
               id="email"
+              onChange={(e) => setEmail(e.target.value)}
             />
-            <div className="absolute right-6 top-[calc(50%-13px)] hidden">
-              <FaCircleExclamation color="var(--primaryRed)" size={26} />
-            </div>
-            <p className="text-primaryRed text-xs text-right pt-1 h-4 hidden">
-              First Name cannot be empty
-            </p>
+            {emailError && (
+              <div className="absolute right-6 top-[calc(50%-13px)]">
+                <FaCircleExclamation color="var(--primaryRed)" size={26} />
+              </div>
+            )}
+            {emailError && (
+              <p className="text-primaryRed text-xs absolute right-0 ">
+                Email address cannot be empty
+              </p>
+            )}
           </div>
           <div className="relative">
             <input
@@ -81,13 +118,18 @@ export default function Home() {
               type="text"
               name="password"
               id="password"
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <div className="absolute right-6 top-[calc(50%-13px)] hidden">
-              <FaCircleExclamation color="var(--primaryRed)" size={26} />
-            </div>
-            <p className="text-primaryRed text-xs text-right pt-1 h-4 hidden">
-              First Name cannot be empty
-            </p>
+            {passwordError && (
+              <div className="absolute right-6 top-[calc(50%-13px)]">
+                <FaCircleExclamation color="var(--primaryRed)" size={26} />
+              </div>
+            )}
+            {passwordError && (
+              <p className="text-primaryRed text-xs absolute right-0 ">
+                Password cannot be empty
+              </p>
+            )}
           </div>
           <button className="text-center uppercase bg-primaryGreen rounded-md py-4 pb-3 font-[500] border-[rgb(37,170,113)]  border-b-4 hover:opacity-75">
             claim your free trial
