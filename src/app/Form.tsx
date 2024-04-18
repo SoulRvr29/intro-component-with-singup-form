@@ -34,7 +34,12 @@ const Form = () => {
       {/* First Name */}
       <div className="relative grid  items-center">
         <input
-          className="w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
+          className={
+            "w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]  " +
+            (errors.firstName
+              ? " border-primaryRed outline-primaryRed text-primaryRed"
+              : " outline-accentBlue")
+          }
           placeholder="First Name"
           type="text"
           id="firstName"
@@ -59,7 +64,12 @@ const Form = () => {
       {/* Last Name */}
       <div className="relative grid items-center">
         <input
-          className="w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
+          className={
+            "w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]  " +
+            (errors.lastName
+              ? " border-primaryRed outline-primaryRed text-primaryRed"
+              : " outline-accentBlue")
+          }
           placeholder="Last Name"
           type="text"
           id="lastName"
@@ -84,7 +94,12 @@ const Form = () => {
       {/* Email Address */}
       <div className="relative grid items-center">
         <input
-          className="w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
+          className={
+            "w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]  " +
+            (errors.email
+              ? " border-primaryRed outline-primaryRed text-primaryRed"
+              : " outline-accentBlue")
+          }
           placeholder="Email Address"
           type="text"
           id="email"
@@ -107,14 +122,19 @@ const Form = () => {
       {/* Password */}
       <div className="relative grid items-center">
         <input
-          className="w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]"
+          className={
+            "w-full border rounded-md px-8 py-4 border-neutralGrayishBlue text-neutralDarkBlue placeholder:text-neutralDarkBlue placeholder:font-[500]  " +
+            (errors.password
+              ? " border-primaryRed outline-primaryRed text-primaryRed"
+              : " outline-accentBlue")
+          }
           placeholder="Password"
           type="password"
           id="password"
           {...register("password", {
             required: true,
             minLength: 6,
-            pattern: /^(?=.*[\w])(?=.*\d).+$/,
+            pattern: /^(?=.*[\D])(?=.*\d).+$/,
           })}
         />
         {errors.password && (
