@@ -4,6 +4,7 @@ import "./globals.css";
 import Image from "next/image";
 import backgroundDesktop from "/public/bg-intro-desktop.png";
 import backgroundMobile from "/public/bg-intro-mobile.png";
+import Footer from "./Footer";
 
 const inter = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -34,6 +35,7 @@ export default function RootLayout({
           alt="Background"
           className="absolute self-center -z-10 top-0 left-0 w-full h-full object-cover hidden max-[375px]:block"
         />
+        <Footer />
       </body>
     </html>
   );
