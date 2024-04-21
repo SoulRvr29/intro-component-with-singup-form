@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/intro-component-with-sign-up-form-u-Hs3TZ1l2](https://www.frontendmentor.io/solutions/intro-component-with-sign-up-form-u-Hs3TZ1l2)
 - Live Site URL: [https://intro-component-with-singup-form.vercel.app/](https://intro-component-with-singup-form.vercel.app/)
   
 ### Built with
